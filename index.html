@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tangkap Buah Bali</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <!-- Area HUD (Papan Info) -->
+        <div id="hud">
+            <div class="hud-stats">
+                <span id="levelDisplay" class="badge level-badge">Level: 1</span> 
+                <span id="skorDisplay" class="badge score-badge">Skor: 0</span> 
+                <span id="missDisplay" class="badge miss-badge">Miss: 0/10</span>
+            </div>
+            <div class="high-score-text">
+                🏆 HIGH SCORE: <span id="highScoreDisplay">0</span> 🏆
+            </div>
+        </div>
+
+        <!-- Tombol Kontrol -->
+        <div id="controls" style="display: none;">
+            <button id="btnSound" class="btn-control sound-btn">🔊 ON</button>
+            <button id="btnPause" class="btn-control pause-btn">Pause</button>
+            <button id="btnRestart" class="btn-control restart-btn">Restart</button>
+        </div>
+        
+        <!-- Layar Awal & Petunjuk Bermain -->
+        <div id="startScreen" class="panel">
+            <div class="hiasan-tropis">🌿 🌺 🌿</div>
+            <h1>Tangkap Buah Bali</h1>
+            <p class="subtitle">Kumpulkan buah tropis segar, hindari bom!</p>
+            
+            <div class="instructions">
+                <h3>📜 Cara Bermain:</h3>
+                <ul>
+                    <li>⬅️️ ➡️ / <b>A D</b> : Gerakkan keranjang.</li>
+                    <li>🥭🍌 <b>Tangkap Buah</b> : Skor +10.</li>
+                    <li>❌ <b>Buah Terlewat</b> : Skor -5 & Miss +1.</li>
+                    <li>🛑 <b>Miss 10x</b> : Game Over!</li>
+                    <li>💣 <b>Tangkap Bom</b> : Langsung Game Over!</li>
+                </ul>
+            </div>
+
+            <button id="btnStart" class="btn-action">Mulai Game 🧺</button>
+        </div>
+
+        <!-- Layar Game Over -->
+        <div id="gameOverScreen" class="panel" style="display: none;">
+            <div class="hiasan-tropis">🥀 💣 🥀</div>
+            <h2>GAME OVER</h2>
+            <p class="final-score-text">Skor Akhir: <span id="finalScore">0</span></p>
+            <button id="btnMainLagi" class="btn-action">Main Lagi 🔄</button>
+        </div>
+        
+        <!-- Canvas area game -->
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
